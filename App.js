@@ -6,7 +6,10 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
+// import RNBootSplash from 'react-native-bootsplash';
+// import Navigation from './app/routes/';
+// import AuthProvider from './app/providers/auth';
 import type {Node} from 'react';
 import {
   SafeAreaView,
