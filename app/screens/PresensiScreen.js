@@ -1,31 +1,47 @@
 import React, {Component} from 'react';
-import {View, Dimensions, StyleSheet} from 'react-native';
-// import QRCodeScanner from 'react-native-qrcode-scanner';
+import {View, FlatList, StyleSheet, Text} from 'react-native';
+import {Card} from 'react-native-paper';
 
 export default class PresensiScreen extends Component {
-  onSuccess = async (e) => {
-    try {
-
-      await this.props.navigation.navigate('Presensi', {
-        data: e.data,
-        // scanner: this.scanner,
-      });
-    } catch (err) {
-      console.debug('err', err);
-      // await this.props.navigation.navigate('Home')
+  constructor(props){
+    super(props); 
+    this.state = {
+      AttendaceList:[
+        {id:'1',name:'Test Absensi',check_in:'10:00',check_out:'11:00'},
+        {id:'2',name:'Test Absensi',check_in:'10:00',check_out:'11:00'}
+      ]
     }
-  };
+  }
+
+  getAttendanceData(){
+    // alert("cok anjeng");
+  }
 
   render() {
     return (
       <View style={styles.container}>
-        {/* <QRCodeScanner
-          onRead={this.onSuccess}
-          showMarker={true}
-          checkAndroid6Permissions={true}
-          cameraStyle={{
-            height: Dimensions.get('window').height,
-          }}></QRCodeScanner> */}
+        <FlatList
+          data={this.state.AttendaceList}
+          renderItem={({item})=>
+            <Card style={{ margin:5, backgroundColor:'#ffdb3d', borderRadius:10 }}
+              onPress={this.getAttendanceData.bind()}
+              >
+              <View style={{flex:1, flexDirection:'row',padding: 10, marginLeft:20}}>
+                <Text style={{flex:1, fontSize: 15}}>Nama Presensi</Text>
+                <Text style={{flex:1, fontSize: 15}}>{item.name}</Text>
+              </View>
+              <View style={{flex:1, flexDirection:'row',padding: 10, marginLeft:20}}>
+                <Text style={{flex:1, fontSize: 15}}>Check In</Text>
+                <Text style={{flex:1, fontSize: 15}}>{item.check_in}</Text>
+              </View>
+              <View style={{flex:1, flexDirection:'row',padding: 10, marginLeft:20}}>
+                <Text style={{flex:1, fontSize: 15}}>Check Out</Text>
+                <Text style={{flex:1, fontSize: 15}}>{item.check_out}</Text>
+              </View>
+            </Card>
+          }
+          keyExtractor={item=>item.id}
+        />
       </View>
     );
   }
@@ -33,6 +49,7 @@ export default class PresensiScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    // flex:1
-  },
+    flex: 1,
+    paddingTop: 22
+   },
 });

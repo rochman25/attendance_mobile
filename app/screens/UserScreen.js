@@ -62,13 +62,13 @@ export default ({navigation}) => {
             <View style={styles.nameSection}>
               <ProfileSetting
                 style={styles.setting}
-                // value=
-                // {`${user.user.user_detail.first_name}`}
+                 value=
+                 {`${user.user.name}`}
               />
               <ProfileSetting
                 style={styles.setting}
-                // value=
-                // {`${user.user.user_detail.last_name}`}
+                 value=
+                 {`${user.user.username}`}
               />
               <ProfileSetting
                 style={styles.setting}

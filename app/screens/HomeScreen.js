@@ -101,7 +101,7 @@ export default ({navigation}) => {
               </Button>
             </View>
           </Layout>
-          <Text style={styles.sectionLabel} category="s1">
+          {/* <Text style={styles.sectionLabel} category="s1">
             Log Absensi
           </Text>
           <View style={{alignItems: 'center', flex: 1}}>
@@ -111,7 +111,7 @@ export default ({navigation}) => {
                 Fitur Log absensi sedang dikembangkan, mohon bersabar :)
               </Text>
             </Text>
-          </View>
+          </View> */}
         </ScrollView>
       </ApplicationProvider>
     </ThemeContext.Provider>

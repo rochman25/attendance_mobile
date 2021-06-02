@@ -58,7 +58,6 @@ export async function updateProfile(userId, data){
 export async function getDetailUser(userId){
     try{
         let res = await axios.get(`${c.USER_DETAIL}/${userId}`);
-
         return res.data;
     }catch(e){
         throw handler(e);
