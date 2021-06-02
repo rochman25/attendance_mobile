@@ -42,7 +42,7 @@ export function handler(err) {
     return new Error(error.message);
 }
 
-export function getListAttendances(){
+export async function getListAttendances(){
     try{
         let res = await axios.get(`${c.GET_LIST_ATTENDANCES}`);
         return res.data;
