@@ -59,3 +59,12 @@ export async function getStudentByAtttendances(){
         throw handler(e);
     }
 }
+
+export async function postStudentAttendance(data){
+    try {
+        let res = await axios.post(c.ATTENDANCE_STUDENTS, data);
+        return res.data;
+    } catch (e) {
+        throw handler(e);
+    }
+}

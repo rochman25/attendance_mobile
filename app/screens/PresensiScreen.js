@@ -66,10 +66,10 @@ export default function PresensiScreen({ route, navigation }) {
                     <Text style={{ flex: 1, fontSize: 15 }}>Check In</Text>
                     <Text style={{ flex: 1, fontSize: 15 }}>{item.check_in}</Text>
                   </View>
-                  <View style={{ flex: 1, flexDirection: 'row', padding: 10, marginLeft: 20 }}>
+                  {/* <View style={{ flex: 1, flexDirection: 'row', padding: 10, marginLeft: 20 }}>
                     <Text style={{ flex: 1, fontSize: 15 }}>Check Out</Text>
                     <Text style={{ flex: 1, fontSize: 15 }}>{item.check_out}</Text>
-                  </View>
+                  </View> */}
                 </Card>
               }
               keyExtractor={item => item.id}

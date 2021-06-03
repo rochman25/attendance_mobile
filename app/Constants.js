@@ -7,3 +7,4 @@ export const ATTENDANCE = `${API_URL}/attendances`;
 export const GET_DETAIL_ATTENDANCE = `${API_URL}/attendances`;
 export const GET_REPORT_ATTENDANCE = `${API_URL}/attendances/report`;
 export const GET_LIST_ATTENDANCES = `${API_URL}/attendances`;
+export const ATTENDANCE_STUDENTS = `${API_URL}/attendances/multiple_student/save`

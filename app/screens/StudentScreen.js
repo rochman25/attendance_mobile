@@ -66,15 +66,26 @@ export default class StudentScreen extends Component {
         }
     };
 
-    postStudentAttendance = async (item) => {
+    postStudentAttendance = async () => {
         // Alert.alert('Message sent :)')
+        const item = this.state.SelectedIdStudent;
         console.debug(item.toString());
         const student_att = {
             attendance_id: 1,
             student_id: item.toString(),
             type: "check_in",
         };
-        
+        try {
+            let res = await api.postStudentAttendance(student_att);
+            if(res.data == undefined){
+
+            }else{
+                Alert.alert(res.message.toString())
+            }
+        } catch (err) {
+            // console.debug(err);
+            // setResponse("Error, mohon maaf ada kesalahan teknis.")
+        }
     }
 
     render() {
@@ -153,8 +164,7 @@ export default class StudentScreen extends Component {
                                 }}>
                                     <TouchableOpacity style={{
                                         padding: 10
-                                    }} onPress={this.postStudentAttendance(this.state.SelectedIdStudent)}>
-
+                                    }} onPress={this.postStudentAttendance}>
                                         <Icon name="ios-paper-plane" size={30} color="white"></Icon>
                                     </TouchableOpacity>
                                 </View>
