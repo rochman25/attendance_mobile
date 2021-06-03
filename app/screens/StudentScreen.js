@@ -81,6 +81,7 @@ export default class StudentScreen extends Component {
 
             }else{
                 Alert.alert(res.message.toString())
+                this.props.navigation.goBack()
             }
         } catch (err) {
             // console.debug(err);
