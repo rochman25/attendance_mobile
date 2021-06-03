@@ -9,7 +9,6 @@ import SignInScreen from '../screens/LoginScreen';
 import UserScreen from '../screens/UserScreen';
 import PresensiScreen from '../screens/PresensiScreen';
 import StudentScreen from '../screens/StudentScreen';
-// import QRCoodeDataScreen from '../screens/QRCodeDataScreen';
 import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';

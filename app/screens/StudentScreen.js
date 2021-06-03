@@ -19,10 +19,10 @@ import * as api from '../services/attendance';
 export default class StudentScreen extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             fakeContact: [],
-            SelectedFakeContactList: []
+            SelectedFakeContactList: [],
+            SelectedIdStudent: []
         }
     }
 
@@ -32,6 +32,7 @@ export default class StudentScreen extends Component {
                 item.check = !item.check
                 if (item.check === true) {
                     this.state.SelectedFakeContactList.push(item);
+                    this.state.SelectedIdStudent.push(item.id)
                     console.log('selected:' + item.nis);
                 } else if (item.check === false) {
                     const i = this.state.SelectedFakeContactList.indexOf(item)
@@ -52,7 +53,7 @@ export default class StudentScreen extends Component {
 
     componentDidMount() {
         this._showContactList()
-        console.debug(this.state.fakeContact)                 
+        console.debug(this.state.fakeContact)
     }
 
     _showContactList = async () => {
@@ -60,10 +61,21 @@ export default class StudentScreen extends Component {
         console.debug(res);
         if (res.data == undefined) {
 
-          } else {
-              this.setState({fakeContact:res.data})
-          }
+        } else {
+            this.setState({ fakeContact: res.data })
+        }
     };
+
+    postStudentAttendance = async (item) => {
+        // Alert.alert('Message sent :)')
+        console.debug(item.toString());
+        const student_att = {
+            attendance_id: 1,
+            student_id: item.toString(),
+            type: "check_in",
+        };
+        
+    }
 
     render() {
         return (
@@ -141,7 +153,7 @@ export default class StudentScreen extends Component {
                                 }}>
                                     <TouchableOpacity style={{
                                         padding: 10
-                                    }} onPress={() => Alert.alert('Message sent :)')}>
+                                    }} onPress={this.postStudentAttendance(this.state.SelectedIdStudent)}>
 
                                         <Icon name="ios-paper-plane" size={30} color="white"></Icon>
                                     </TouchableOpacity>
