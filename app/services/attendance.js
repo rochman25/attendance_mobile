@@ -50,3 +50,12 @@ export async function getListAttendances(){
         throw handler(e);
     }
 }
+
+export async function getStudentByAtttendances(){
+    try{
+        let res = await axios.get(`${c.GET_LIST_ATTENDANCES}/1/students`);
+        return res.data;
+    }catch (e) {
+        throw handler(e);
+    }
+}

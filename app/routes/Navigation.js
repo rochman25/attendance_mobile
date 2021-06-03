@@ -8,6 +8,7 @@ import HomeScreen from '../screens/HomeScreen';
 import SignInScreen from '../screens/LoginScreen';
 import UserScreen from '../screens/UserScreen';
 import PresensiScreen from '../screens/PresensiScreen';
+import StudentScreen from '../screens/StudentScreen';
 // import QRCoodeDataScreen from '../screens/QRCodeDataScreen';
 import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
 
@@ -61,7 +62,8 @@ export default () => {
               animationTypeForReplace: 'pop',
             })}
           />
-          <RootStack.Screen name="Scanner" component={PresensiScreen} />
+          <RootStack.Screen name="Presensi" component={PresensiScreen} />
+          <RootStack.Screen name="Siswa" component={StudentScreen} />
           {/* <RootStack.Screen name="Presensi" component={QRCoodeDataScreen} /> */}
         </>
       ) : (

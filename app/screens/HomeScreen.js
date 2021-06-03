@@ -34,7 +34,7 @@ export default ({navigation}) => {
   const styles = useStyleSheet(themedStyles);
 
   const openScanner = () => {
-    navigation.navigate('Scanner');
+    navigation.navigate('Presensi');
   };
 
   async function initialize() {
@@ -90,15 +90,15 @@ export default ({navigation}) => {
                 style={styles.profileButton}
                 icon={PersonAddIcon}
                 onPress={openScanner}>
-                Check In
+                Presensi
               </Button>
-              <Button
+              {/* <Button
                 appearance="outline"
                 style={styles.profileButton}
                 icon={MessageCircleIcon}
                 onPress={openScanner}>
                 Check Out
-              </Button>
+              </Button> */}
             </View>
           </Layout>
           {/* <Text style={styles.sectionLabel} category="s1">
